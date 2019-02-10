@@ -5,6 +5,8 @@ DESCRIPTION:
 Homework #3  Data Analytics Boot Camp
 Due: 11FEB2019
 Programmer:  Eric Staveley  MWSa Session
+PyBank and PyPoll were required.
+PyBoss and PyParagraph were extra activities and are included here.
 
 1.
 -------
@@ -51,6 +53,33 @@ Winner: Khan
 -----------------------
 
 Application will then notify the user when it is finished.
+
+3.
+-------
+PyBoss
+-------
+PyPoll is the first of the extra two assignments.  Source code is located in the PyBoss directory.  
+main.py should be interpreted from python or jupyter notebook.
+The application references a csv file (employee_data.csv) located in the same directory
+and the same level as the sourced .py file.
+The application will analyze the input data from the file and create a reorganized file
+based on the instructions given:  new_employee_data.csv
+
+Application will then notify the user when it is finished.
+
+4.
+-------
+PyParagraph
+-------
+PyParagraph is the second of the two extra assignments.  Source code is located in the PyParagraph directory.  
+main.py should be interpreted from python or jupyter notebook.
+The application references a user-chosen raw data .csv file located in the raw_data directory
+and the same level as the sourced .py file.
+The application will analyze the input data from the file and generate
+statistics of the grammar contained in the chosen raw data file.
+
+Application will then notify the user when it is finished.
+
 
 TABLE OF CONTENTS:
 None
