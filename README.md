@@ -63,7 +63,7 @@ main.py should be interpreted from python or jupyter notebook.
 The application references a csv file (employee_data.csv) located in the same directory
 and the same level as the sourced .py file.
 The application will analyze the input data from the file and create a reorganized file
-based on the instructions given:  new_employee_data.csv
+based on the instructions given:  employee_data2.csv
 
 Application will then notify the user when it is finished.
 

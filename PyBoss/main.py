@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[1]:
 
 
 # Filename:  main.py    PYBOSS challenge
@@ -20,12 +20,12 @@ csvpath = os.path.join('.', 'employee_data.csv')
 
 output_list = []   # define our final output list (which will be the contents of our output file)
 
-newfile = "new_employee_data.csv"   # the name of the new output file
+newfile = "employee_data2.csv"   # the name of the new output file
 new_header_line = "Emp ID,First Name,Last Name,DOB,SSN,State"    #define the new output header line
 output_list.append(new_header_line)    # put the header there
 
 
-# In[6]:
+# In[2]:
 
 
 us_state_abbrev = {
@@ -82,7 +82,7 @@ us_state_abbrev = {
         }
 
 
-# In[7]:
+# In[3]:
 
 
 
