@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[15]:
+
+
+#!/usr/bin/env python
+# coding: utf-8
+
 # In[10]:
 
 
@@ -27,20 +33,30 @@ import csv
 import re
 
 
-# In[11]:
+# In[16]:
 
 
 def readfile(myfile):
     totlettercount = 0
     totwordcount = 0
     totsentcount = 0
-       
+    paragraphnum = 0
+    
     with open("raw_data/" + myfile) as file_object: 
+        #totlettercount = 0
+        #totwordcount = 0
+        #totsentcount = 0
         lines = file_object.readlines()
-        print("The file you chose:")
+        print("The file you chose:" + myfile)
         for paragraph in lines: 
-            print("paragraph:")
-            print(paragraph)
+            totlettercount = 0
+            totwordcount = 0
+            totsentcount = 0
+            
+            wordcount = 0
+            #print(paragraph)
+            #ericinput = input("pause here")
+            
             #re.split("(?<=[.!?]) +", paragraph)
             wordlist = re.split(" ", paragraph)    #split on spaces
             #print(wordlist[0])
@@ -68,23 +84,23 @@ def readfile(myfile):
             #to determine avg sentence length..just divide wordcount by sentencecount
             avgsentencelength = wordcount / sentcount     # REQUIRED
 
-
             #print(wordlist)
             #print(paragraph)
             #joe = input("Input something here")
 
-    print("\n#Paragraph Analysis")
-    print("#-----------------")
-    print(f"#Approximate Word Count: + {totwordcount}")
-    print(f"#Approximate Sentence Count:  + {totsentcount}")
-    print(f"#Average Letter Count: + {avglettercount}")
-    print(f"#Average Sentence Length:  + {avgsentencelength}")
-    print("\nFinished!")
-         
-       
+            if wordcount > 1:     # TO ACCOUNT FOR JUST A NEWLINE
+                paragraphnum = paragraphnum + 1
+                print("\n#Paragraph Analysis")
+                print("#-----------------")
+                print(f"#Paragraph # {paragraphnum}")
+                print(paragraph + "\n")
+                print(f"#Approximate Word Count:  {totwordcount}")
+                print(f"#Approximate Sentence Count:   {totsentcount}")
+                print(f"#Average Letter Count:  {avglettercount}")
+                print(f"#Average Sentence Length:   {avgsentencelength}")
 
 
-# In[22]:
+# In[19]:
 
 
 userinput = input("Select (1) for file paragraph_1.txt or (2) for file paragraph_2.txt or (3) for Adam Wayne snippet for processing..")
@@ -93,19 +109,17 @@ if userinput == "1":
     readfile(chosenfile)
 elif userinput == "2":
     chosenfile = "paragraph_2.txt"
-    print("Not quite working on ALL the paragraphs at one pop, within this file, yet!")
+    print("Showing stats for each paragraph in the file!")
     readfile(chosenfile)
 elif userinput == "3":
     chosenfile = "AdamWayne.txt"
-    print("I'm 2 words off in my count. README.md says 122 words and so does Notepad++, I get 120!")
+    print("I'm actually 2 words off in my count. README.md says 122 words and so does Notepad++, I get 120!")
     readfile(chosenfile)
 else:
     print("Pease pick a valid number for your file selection.  Please re run the program")
     chosenfile = ""
+    
+print("\nFinished!")
 
 
-# In[ ]:
-
-
-
-
+# 
